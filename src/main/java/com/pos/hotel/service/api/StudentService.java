@@ -2,9 +2,7 @@ package com.pos.hotel.service.api;
 
 import com.pos.hotel.model.request.StudentRequest;
 import com.pos.hotel.model.response.StudentResponse;
-import com.pos.hotel.model.response.base.BaseRestResponse;
 import com.pos.hotel.model.response.base.RestListResponse;
-import com.pos.hotel.model.response.base.RestSingleResponse;
 
 import java.util.List;
 

@@ -8,8 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
-public class ModelConverterServiceImpl implements ModelConverterService {
+@Service public class ModelConverterServiceImpl implements ModelConverterService {
 
     @Override public List<StudentResponse> convertToStudentListResponse(List<Student> students) {
         List<StudentResponse> studentResponses = new ArrayList<>();
