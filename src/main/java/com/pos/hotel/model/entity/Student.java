@@ -2,46 +2,31 @@ package com.pos.hotel.model.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
 
 /**
  * Created by askarymrumhadi on 05/11/17.
  */
-
-/*
-create table students (
-    id character varying(255) PRIMARY KEY,
-    first_name character varying(60) NOT NULL,
-    last_name character varying(60) NOT NULL,
-    birth_date timestamp without time zone NOT NULL
-)
-
-insert into students values((select uuid_in(md5(random()::text || now()::text)::cstring)), 'askary','muhammad',now())
-insert into students values((select uuid_in(md5(random()::text || now()::text)::cstring)), 'askary','rumhadi',now())
-*/
-@Entity
-@Table(name = Student.TABLE_NAME)
-public class Student {
+@Entity @Table(name = Student.TABLE_NAME) public class Student {
 
     public static final String TABLE_NAME = "students";
 
-    @Id
-    @Column(name="id")
-    @GeneratedValue(generator = "uuid2")
-    @GenericGenerator(name="uuid2", strategy = "uuid2")
-    private String id;
+    @Id @Column(name = "id") @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "uuid2") private String id;
 
-    @Column(name="first_name", nullable = false)
-    private String firstName;
+    @Column(name = "first_name", nullable = false) private String firstName;
 
-    @Column(name="last_name", nullable = false)
-    private String lastName;
+    @Column(name = "last_name", nullable = false) private String lastName;
 
-    @Column(name="birth_date", nullable = false)
-    private Date birthDate;
+    @Column(name = "birth_date", nullable = false) private Date birthDate;
 
-    public Student() {}
+    public Student() {
+    }
 
     public Student(String id, String firstName, String lastName, Date birthDate) {
         this.id = id;
