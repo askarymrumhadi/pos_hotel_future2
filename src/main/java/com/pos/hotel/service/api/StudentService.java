@@ -15,6 +15,8 @@ public interface StudentService {
 
     List<StudentResponse> findAll();
 
+    RestListResponse<StudentResponse> findPageable(StudentRequest request);
+
     List<StudentResponse> findByFirstName(String firstName);
 
     StudentResponse saveStudent(StudentRequest request) throws Exception;

@@ -23,12 +23,11 @@ import java.util.List;
 
     @Autowired private StudentService studentService;
 
-    @GetMapping(path = "/api/students", produces = MediaType.APPLICATION_JSON_VALUE) @ResponseBody
-    public RestListResponse<StudentResponse> getStudents() {
+    @PostMapping(path = "/api/students", produces = MediaType.APPLICATION_JSON_VALUE) @ResponseBody
+    public RestListResponse<StudentResponse> getStudents(@RequestBody StudentRequest request) {
         RestListResponse<StudentResponse> response;
         try {
-            List<StudentResponse> studentResponseList = this.studentService.findAll();
-            response = new RestListResponse<>(null, null, true, studentResponseList);
+            response = this.studentService.findPageable(request);
         } catch (Exception e) {
             response = new RestListResponse<>(null, e.getMessage(), false);
         }

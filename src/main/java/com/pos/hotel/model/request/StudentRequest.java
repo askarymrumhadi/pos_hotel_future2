@@ -1,5 +1,7 @@
 package com.pos.hotel.model.request;
 
+import com.pos.hotel.model.response.base.PageMetaData;
+
 import java.util.Date;
 
 public class StudentRequest {
@@ -8,6 +10,15 @@ public class StudentRequest {
     private String firstName;
     private String lastName;
     private Date birthDate;
+    private PageMetaData pageMetaData;
+
+    public PageMetaData getPageMetaData() {
+        return pageMetaData;
+    }
+
+    public void setPageMetaData(PageMetaData pageMetaData) {
+        this.pageMetaData = pageMetaData;
+    }
 
     public String getFirstName() {
         return firstName;

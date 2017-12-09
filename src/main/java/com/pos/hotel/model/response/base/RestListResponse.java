@@ -3,9 +3,10 @@ package com.pos.hotel.model.response.base;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RestListResponse<T extends Object> extends BaseRestResponse {
+public class RestListResponse<T extends BaseResponse> extends BaseRestResponse {
 
     private List<T> content = new ArrayList<>();
+    private PageMetaData pageMetaData;
 
     public RestListResponse() {
     }
@@ -19,9 +20,18 @@ public class RestListResponse<T extends Object> extends BaseRestResponse {
     }
 
     public RestListResponse(String errorCode, String errorMessage, boolean success,
-        List<T> content) {
+        List<T> content, PageMetaData pageMetaData) {
         super(errorCode, errorMessage, success);
         this.content = content;
+        this.pageMetaData = pageMetaData;
+    }
+
+    public PageMetaData getPageMetaData() {
+        return pageMetaData;
+    }
+
+    public void setPageMetaData(PageMetaData pageMetaData) {
+        this.pageMetaData = pageMetaData;
     }
 
     public List<T> getContent() {

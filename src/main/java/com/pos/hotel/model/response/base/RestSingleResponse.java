@@ -1,6 +1,6 @@
 package com.pos.hotel.model.response.base;
 
-public class RestSingleResponse<T extends Object> extends BaseRestResponse {
+public class RestSingleResponse<T extends BaseResponse> extends BaseRestResponse {
 
     private T value;
 

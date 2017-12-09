@@ -1,8 +1,10 @@
 package com.pos.hotel.model.response;
 
+import com.pos.hotel.model.response.base.BaseResponse;
+
 import java.util.Date;
 
-public class StudentResponse {
+public class StudentResponse extends BaseResponse{
     private String firstName;
     private String lastName;
     private Date birthDate;
